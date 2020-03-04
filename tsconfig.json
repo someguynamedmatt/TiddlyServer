@@ -6,7 +6,8 @@
     "module": "commonjs",
     "target": "es2017",
     "lib": [
-      "es2017"
+      "es2017",
+      "dom"
     ],
     "strict": true,
     "noImplicitAny": false,
@@ -15,7 +16,7 @@
     "resolveJsonModule": true,
     "noErrorTruncation": true
   },
-  "include": ["./preflighter.ts", "./server.ts", "src/*", "test/*"],
+  "include": ["./preflighter.ts", "./assets/**/*", "./server.ts", "src/*", "test/*"],
   "exclude": [
     "node_modules",
     "new-server",

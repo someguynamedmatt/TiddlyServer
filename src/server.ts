@@ -11,7 +11,8 @@ import * as send from "send";
 import * as libsodium from "libsodium-wrappers";
 import * as WebSocket from "ws";
 import * as morgan from "morgan";
-import { checkCookieAuth, handleAuthRoute, initAuthRoute } from "./authRoute";
+import { handleAuthRoute, initAuthRoute } from "./authRoute";
+import { checkCookieAuth } from "./cookies";
 import { checkServerConfig } from "./interfacechecker";
 import {
   init as initServerTypes,

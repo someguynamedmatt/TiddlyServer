@@ -16,6 +16,7 @@
   "devDependencies": {
     "@fidm/x509": "^1.2.0",
     "@material/textfield": "^0.44.0",
+    "@types/angular": "^1.6.57",
     "@types/libsodium-wrappers": "^0.7.5",
     "@types/node": "^8.10.59",
     "@types/send": "^0.14.4",
@@ -45,7 +46,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "./server.js",
-    "assets": "cp -r ./assets ./build/assets",
+    "assets": "cp -r ./assets/* ./build/assets",
     "build": "tsc && node build-schema.js && npm run assets",
     "build:clean": "rm -rf build && npm run build"
   },
