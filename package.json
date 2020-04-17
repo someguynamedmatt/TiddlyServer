@@ -7,7 +7,7 @@
   },
   "main": "./lib/compiled-lib.js",
   "dependencies": {
-    "tiddlywiki-production": "5.1.22"
+    "tiddlywiki-production": "5.1.21"
   },
   "devDependencies": {
     "rxjs": "^6.5.5",
