@@ -22,6 +22,7 @@ const pko: Record<string, PkoVals> = {}
 const TenMinutes: number = 10 * 60 * 1000
 
 const removePendingPinTimeout = (pin: string): NodeJS.Timeout => {
+  // @ts-ignore number is not assignable to type Timeout
   return setTimeout(() => {
     delete pko[pin]
   }, TenMinutes)
@@ -75,7 +76,9 @@ const expectKeys = <T extends unknown>(obj: any, keys: ExpectedKeys): obj is T =
 
 export const handleHEADorGETFileServe = (state: StateObject): void => {
   const pathLength = state.path.length
+  console.log('WHOOPs,', pathLength)
   if (pathLength === 4 && state.path[3] === 'login.html') {
+    console.log('SETTINGS', state.settings.__assetsDir)
     serveFile(state, 'login.html', path.join(state.settings.__assetsDir, 'authenticate'))
   } else if (pathLength === 4 && state.path[3] === 'transfer.html') {
     serveFile(state, 'transfer.html', path.join(state.settings.__assetsDir, 'authenticate'))

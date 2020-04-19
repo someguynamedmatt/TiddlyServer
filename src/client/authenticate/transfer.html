@@ -2,14 +2,14 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/assets/static/authenticate-login.css" />
+  <link rel="stylesheet" href="/client/static/authenticate-login.css" />
   <title>Secure Transfer</title>
 	<script>
-		/** 
-		 * if you want to change these values server wide, you are welcome to, but remember 
-		 * that they will be overwritten by an update, so you may want to copy them into 
-		 * a file next to this one named `salts-backup.json`, which has been added to .gitignore 
-		 * for this purpose. You may also place it in /assets/static/ if you want to, which will 
+		/**
+		 * if you want to change these values server wide, you are welcome to, but remember
+		 * that they will be overwritten by an update, so you may want to copy them into
+		 * a file next to this one named `salts-backup.json`, which has been added to .gitignore
+		 * for this purpose. You may also place it in /src/client/static/ if you want to, which will
 		 * allow it to be served directly. Remember that these salts are completely PUBLIC and STATIC.
 		 * Changing them will require all credentials to be re-added to the ServerConfig.
 		 */
@@ -18,8 +18,8 @@
 			password: "tiddlyserverclientsaltpassword",
 		}
 	</script>
-	<script src="/assets/static/sodium-browser.js"></script>
-	<script src="/assets/static/material-components-web.min.js"></script>
+	<script src="/client/static/sodium-browser.js"></script>
+	<script src="/client/static/material-components-web.min.js"></script>
 </head>
 
 <body>
@@ -50,7 +50,7 @@
 					style="align-self:center;">
 					<span class="mdc-button__label">Transfer</span>
 				</a>
-				<!-- 
+				<!--
 				<button class="mdc-button mdc-button--outlined" style="align-self:center;">
 					<span class="mdc-button__label">Button</span>
 				</button>
@@ -65,7 +65,7 @@
 	<!-- Note: when deploying, replace "development.js" with "production.min.js". -->
 	<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
 	<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-	<script src="/assets/static/authenticate-transfer.js"></script>
+	<script src="/client/static/authenticate-transfer.js"></script>
 </body>
 
 </html>

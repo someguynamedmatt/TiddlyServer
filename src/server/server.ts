@@ -30,7 +30,7 @@ import { handleAdminRoute, handleAssetsRoute } from './route-handlers'
 
 export { checkServerConfig }
 const { Server: WebSocketServer } = WebSocket
-const assets = path.resolve(__dirname, '../assets')
+const assets = path.resolve(__dirname, '../client')
 
 /*
  * Global settings
@@ -48,7 +48,7 @@ eventer.on('settings', set => {
 
 export const routes: ServerRouteHandlers = {
   'admin': state => handleAdminRoute(state),
-  'assets': state => handleAssetsRoute(state),
+  'client': state => handleAssetsRoute(state),
   'favicon.ico': state => serveFile(state, 'favicon.ico', state.settings.__assetsDir),
   'directory.css': state => serveFile(state, 'directory.css', state.settings.__assetsDir),
 }

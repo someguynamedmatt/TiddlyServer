@@ -35,8 +35,8 @@ const settingsFile = userSettings
   ? path.resolve(userSettings)
   : path.join(
       __dirname,
-      //if we're in the build directory the default one level up
-      __dirname.endsWith('/build') ? '..' : '',
+      //if we're in the dist directory the default one level up
+      __dirname.endsWith('/dist') ? '..' : '',
       'settings.json'
     )
 

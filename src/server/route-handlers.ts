@@ -14,13 +14,13 @@ import { RequestMethod } from '../types'
 export const handleAssetsRoute = (state: StateObject) => {
   switch (state.path[2]) {
     case 'static':
-      serveFolder(state, '/assets/static', path.join(state.settings.__assetsDir, 'static'))
+      serveFolder(state, '/client/static', path.join(state.settings.__assetsDir, 'static'))
       break
     case 'icons':
-      serveFolder(state, '/assets/icons', path.join(state.settings.__assetsDir, 'icons'))
+      serveFolder(state, '/client/icons', path.join(state.settings.__assetsDir, 'icons'))
       break
     case 'tiddlywiki':
-      serveFolder(state, '/assets/tiddlywiki', state.settings.__targetTW)
+      serveFolder(state, '/client/tiddlywiki', state.settings.__targetTW)
       break
     default:
       state.throw(404)
