@@ -74,10 +74,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/server",
-    "client-copy": "webpack --config webpack.client.ts",
-    "client": "mkdir -p ./dist/client; cp -nv ./preflighter.js ./dist/",
-    "build": "tsc && ts-node ./schemas/build-schema.ts && npm run client-copy",
-    "build:clean": "rm -rf build && npm run build",
+    "clean": "rm -rf build",
+    "build:client": "webpack --config webpack.client.ts",
+    "build": "npm run clean && tsc && ts-node ./schemas/build-schema.ts && npm run build:client",
     "dev": "nodemon",
     "lint": "eslint './src/**/*.{ts,js}' --fix",
     "lint:ci": "eslint './src/**/*.{ts,js}'"
