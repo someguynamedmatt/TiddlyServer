@@ -2,14 +2,14 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="/assets/static/authenticate-login.css" />
+	<link rel="stylesheet" href="/client/static/authenticate-login.css" />
 	<title>Login</title>
 	<script>
-		/** 
-		 * if you want to change these values server wide, you are welcome to, but remember 
-		 * that they will be overwritten by an update, so you may want to copy them into 
-		 * a file next to this one named `salts-backup.json`, which has been added to .gitignore 
-		 * for this purpose. You may also place it in /assets/static/ if you want to, which will 
+		/**
+		 * if you want to change these values server wide, you are welcome to, but remember
+		 * that they will be overwritten by an update, so you may want to copy them into
+		 * a file next to this one named `salts-backup.json`, which has been added to .gitignore
+		 * for this purpose. You may also place it in /src/client/static/ if you want to, which will
 		 * allow it to be served directly. Remember that these salts are completely PUBLIC and STATIC.
 		 * Changing them will require all credentials to be re-added to the ServerConfig.
 		 */
@@ -25,9 +25,9 @@
 			}
 		};
 	</script>
-	<script src="/assets/static/sodium-browser.js"></script>
-	<script src="/assets/static/material-components-web.min.js"></script>
-	<script src="/assets/static/authenticate-login.js"></script>
+	<script src="/client/static/sodium-browser.js"></script>
+	<script src="/client/static/material-components-web.min.js"></script>
+	<script src="/client/static/authenticate-login.js"></script>
 
 </head>
 
@@ -83,7 +83,7 @@
 					a key, so every character you add makes that many more possibilities. </p>
 				<p>
 					Of course, if you're on localhost it's not real important because your login cookie will get
-					sent to all localhost servers (kind of scary, eh?) anyway. So just use a different password on 
+					sent to all localhost servers (kind of scary, eh?) anyway. So just use a different password on
 					localhost than you would use on a public-facing website.
 				</p>
 			</div> -->

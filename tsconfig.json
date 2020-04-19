@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./build",
+    "outDir": "./dist",
     "baseUrl": "./src/",
     "rootDirs": ["./src/"],
     "module": "commonjs",
@@ -15,16 +15,13 @@
     "inlineSourceMap": true,
     "resolveJsonModule": true,
     "noErrorTruncation": true,
-    "declaration": false
+    "declaration": false,
+    "skipLibCheck": true
   },
   "files": ["./server.ts"],
-  "include": ["./assets/**/*", "./server.ts", "src/"],
+  "include": ["./server.ts", "src/**/*"],
   "exclude": [
-    "**/*/node_modules",
     "node_modules",
-    "new-server",
-    "archive",
-    "static",
-    "./assets/static"
+    "static"
   ]
 }

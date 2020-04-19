@@ -111,7 +111,7 @@
                 },
                 "type": "array"
               },
-              "description": "Hashmap of type { \"icon_name\": [\".ext\", \"mime/type\"]} where ext represents the extensions to use this icon for.\nIcons are in the TiddlyServer/assets/icons folder.",
+              "description": "Hashmap of type { \"icon_name\": [\".ext\", \"mime/type\"]} where ext represents the extensions to use this icon for.\nIcons are in the TiddlyServer/client/icons folder.",
               "type": "object"
             },
             "mimetypes": {

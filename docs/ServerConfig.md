@@ -210,7 +210,7 @@ The global default directory index format. Default is `html`.
 
 ### icons: Hashmap
 
-Hashmap where key is the icon files in `/assets/icons/files` (without the extension) and value is an array of extensions to show the icon for in directory index. 
+Hashmap where key is the icon files in `/client/icons/files` (without the extension) and value is an array of extensions to show the icon for in directory index. 
 
 The default is `{ "htmlfile": ["htm", "html"] }`.
 

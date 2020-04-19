@@ -9,7 +9,7 @@ export type RequestEventFn = <T extends RequestEvent>(ev: T) => Promise<T>
 
 export type ServerOptionsByHost = (host: string) => https.ServerOptions
 
-type ServerRoutes = 'admin' | 'assets' | 'favicon.ico' | 'directory.css'
+type ServerRoutes = 'admin' | 'client' | 'favicon.ico' | 'directory.css'
 export type ServerRouteHandlers = {
   [key in ServerRoutes]: (state: StateObject) => void
 }
@@ -599,7 +599,7 @@ export interface ServerConfig_DirectoryIndex {
   defaultType: 'html' | 'json'
   /**
    * Hashmap of type { "icon_name": [".ext", "mime/type"]} where ext represents the extensions to use this icon for.
-   * Icons are in the TiddlyServer/assets/icons folder.
+   * Icons are in the TiddlyServer/client/icons folder.
    */
   icons: { [iconName: string]: string[] }
   types: { [ext: string]: string }

@@ -32,7 +32,7 @@ export const generateDirectoryListing = (directory, options) => {
         return `
 <li>
     <span class="icon">
-        <img style="width:16px;vertical-align: middle;" src="/assets/icons/${(isFile
+        <img style="width:16px;vertical-align: middle;" src="/client/icons/${(isFile
           ? 'files/'
           : '') + entry.type}.png"/>
     </span>

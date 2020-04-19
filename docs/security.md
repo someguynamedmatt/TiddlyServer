@@ -39,7 +39,7 @@ The login cookie is generated using a public/private key pair which in turn is g
 
 For the end-user, they assume they are using a username and password for authentication, so all standard password rules that they have learned apply. 
 
-**For you, the reader, I need to warn you** that you must not be lulled into a false sense of security. The private key seed is generated from a hash of the username, password, and a salt that is the same for all TiddlyServer installations by default. It is then put through a PBKDF. It is designed to slow down brute-force attacks, but in the end the security is not better than a simple username+password combination with the password hashed on the server. The code is in `/assets/authenticate/authenticate-login.ts` if you are interested.
+**For you, the reader, I need to warn you** that you must not be lulled into a false sense of security. The private key seed is generated from a hash of the username, password, and a salt that is the same for all TiddlyServer installations by default. It is then put through a PBKDF. It is designed to slow down brute-force attacks, but in the end the security is not better than a simple username+password combination with the password hashed on the server. The code is in `/client/authenticate/authenticate-login.ts` if you are interested.
 
 The only difference is that the password is not sent accross in the clear, but this does not imply that HTTPS is not required, because cookies can always be stolen, and data can always be read in the clear. 
 
