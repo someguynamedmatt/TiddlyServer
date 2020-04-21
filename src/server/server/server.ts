@@ -30,7 +30,7 @@ import { handleAdminRoute, handleAssetsRoute } from './route-handlers'
 
 export { checkServerConfig }
 const { Server: WebSocketServer } = WebSocket
-const assets = path.resolve(__dirname, '../client')
+const assets = path.resolve(__dirname, '../../client')
 
 /*
  * Global settings
@@ -412,7 +412,8 @@ export const loadSettings = (settingsFile: string, routeKeys: string[]) => {
   return { settings: settingsObj, settingshttps }
 }
 
-export const serveFile = async (state: StateObject, file: string, root: string | undefined) => {
+export const serveFile = (state: StateObject, file: string, root: string | undefined) => {
+  console.log('ROOT', root)
   promisify(fs.stat)(root ? path.join(root, file) : file).then(
     (): any => {
       state.send({

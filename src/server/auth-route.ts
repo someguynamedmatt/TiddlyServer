@@ -1,4 +1,4 @@
-import { serveFile } from './server'
+import { serveFile } from './server/server'
 import { getSetCookie, validateCookie, parseAuthCookie } from './cookies'
 import {
   crypto_generichash as cryptoGenericHash,

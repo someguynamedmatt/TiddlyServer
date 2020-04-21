@@ -1,5 +1,5 @@
 import { sortBySelector } from './server'
-import * as info from '../package.json'
+const info = require('../../package.json')
 
 const fixPutSaver = `javascript:((saver) => {
 if (typeof saver !== 'number' || saver < 0) return;
@@ -78,7 +78,7 @@ ${
 <form action="?formtype=upload" method="post" enctype="multipart/form-data" name="upload">
     <label>Upload file</label>
     <input type="text" name="filename" placeholder="File name" />
-    <input type="file" name="filetoupload" 
+    <input type="file" name="filetoupload"
         onchange="this.form.elements.filename.value=this.files[0].name;"/>
     <input type="submit"/>
 </form>

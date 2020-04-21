@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "outDir": "./dist",
-    "baseUrl": "./src/",
-    "rootDirs": ["./src/"],
+    "baseUrl": "./src",
+    "rootDirs": ["./src"],
     "module": "commonjs",
     "target": "es2017",
     "lib": [
@@ -18,8 +18,8 @@
     "declaration": false,
     "skipLibCheck": true
   },
-  "files": ["./server.ts"],
-  "include": ["./server.ts", "src/**/*"],
+  "files": ["./src/init-server.ts"],
+  "include": ["./src/init-server.ts", "./src/client"],
   "exclude": [
     "node_modules",
     "static"

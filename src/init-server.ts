@@ -1,14 +1,11 @@
-#!/usr/bin/env node
-
-require('source-map-support/register')
+//require('source-map-support/register')
 import * as fs from 'fs'
 import * as path from 'path'
 import { inspect } from 'util'
-import * as server from './src/server'
+import * as server from './server/server'
 import * as yargs from 'yargs'
-import preflighter from './src/preflighter'
+import preflighter from './server/preflighter'
 
-const SETTINGS_FILE = 'settings.json'
 const argv = yargs
   .usage('./$0 - TiddlyServer')
   .option('config', {
@@ -36,13 +33,15 @@ const settingsFile = userSettings
   : path.join(
       __dirname,
       //if we're in the dist directory the default one level up
-      __dirname.endsWith('/dist') ? '..' : '',
+      __dirname.endsWith('/dist/src') ? '../..' : '',
       'settings.json'
     )
 
+/*
 declare const __non_webpack_require__: NodeRequire | undefined
 const nodeRequire =
   typeof __non_webpack_require__ !== 'undefined' ? __non_webpack_require__ : require
+  */
 
 const logAndCloseServer = (err: any) => {
   server.eventer.emit('serverClose', 'all')
@@ -94,7 +93,7 @@ async function runServer() {
   try {
     server.initServer({
       settings,
-      settingshttps: httpsSettingsFile && nodeRequire(httpsSettingsFile).serverOptions,
+      settingshttps: undefined, //httpsSettingsFile && nodeRequire(httpsSettingsFile).serverOptions,
       preflighter,
       dryRun,
     })

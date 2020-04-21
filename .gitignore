@@ -10,7 +10,6 @@ node_modules/
 /assets/static/salts-backup.json
 
 settings.json
-build/
 dist/
 
 .DS_Store

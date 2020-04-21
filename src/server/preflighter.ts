@@ -4,7 +4,7 @@ const USERNAME = ''
 const PASSWORD = ''
 const ALLOW_UNSECURED_WEBSOCKETS = false
 
-export default function(ev: any) {
+const preflighter = (ev: any) => {
   if (!USERNAME && !PASSWORD) return ev
   if (ev.response) ev.handled = !handleBasicAuth(ev.request, ev.response)
   else if (!ALLOW_UNSECURED_WEBSOCKETS && ev.client) {
@@ -48,3 +48,5 @@ const handleBasicAuth = (request: IncomingMessage, response: ServerResponse) => 
   }
   return true
 }
+
+export default preflighter

@@ -3,6 +3,8 @@ import * as path from 'path'
 import { tryParseJSON, Hashmap } from './server'
 import { promisify } from 'util'
 import { FileInfo, WikiInfo } from './boot-startup-types'
+import * as boot from 'tiddlywiki-production/boot/boot'
+import * as bootPrefix from 'tiddlywiki-production/boot/bootprefix'
 
 const loadWikiInfo = async (wikipath: string) => {
   let filePath = path.join(wikipath, 'tiddlywiki.info')
@@ -69,10 +71,10 @@ export namespace TiddlyWiki {
   }
 
   export const loadCore = () => {
-    const $tw = require('../tiddlywiki/boot/boot.js').TiddlyWiki(
-      require('../tiddlywiki/boot/bootprefix.js').bootprefix({
+    const $tw = boot.TiddlyWiki(
+      bootPrefix.bootprefix({
         packageInfo: JSON.parse(
-          fs.readFileSync(path.join(__dirname, '../tiddlywiki/package.json'), 'utf8')
+          fs.readFileSync(path.join(__dirname, '../../tiddlywiki/package.json'), 'utf8')
         ),
       })
     )

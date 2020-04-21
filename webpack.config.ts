@@ -1,32 +1,37 @@
+const webpack = require('webpack')
 const path = require('path')
-const webpack = module.parent.require('webpack')
 const CopyPlugin = require('copy-webpack-plugin')
 
-const options = {
-  watch: false,
-  entry: path.resolve(__dirname, './build/server.js'),
-  output: {
-    filename: 'server-bin.js',
-    path: path.resolve(__dirname, './build/'),
-    libraryTarget: 'commonjs2',
-  },
-  plugins: [
-    new webpack.DefinePlugin({
-      GENTLY: false,
-      global: { GENTLY: false },
-    }),
-  ],
-  mode: false ? 'development' : 'production',
+module.exports = {
+  //  mode: 'none',
+  // TODO: This is a hack to get the files copied, we don't actually care about the output bundle
+  //entry: './dist/src/init-server.js',
+  entry: './src/init-server.ts',
   target: 'node',
   node: {
-    global: true,
-    __dirname: false,
-    __filename: false,
+    fs: 'empty',
   },
-  externals: {
-    'utf-8-validate': 'commonjs utf-8-validate',
-    'bufferutil': 'commonjs bufferutil',
+  plugins: [
+    new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: false }),
+    new CopyPlugin([
+      {
+        from: './src/client/**/*',
+        // TODO: don't ignore js files because some src's are dependenent on them, these should
+        // be converted to TS
+        ignore: ['node_modules', 'tsconfig.*', '*.ts'],
+      },
+    ]),
+  ],
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: 'ts-loader',
+      },
+    ],
   },
 }
-
-module.exports = options

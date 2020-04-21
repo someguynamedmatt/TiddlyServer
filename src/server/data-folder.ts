@@ -10,6 +10,8 @@ import { StateObject } from './state-object'
 import * as path from 'path'
 import * as http from 'http'
 import * as fs from 'fs'
+import * as boot from 'tiddlywiki-production/boot/boot'
+import * as bootPrefix from 'tiddlywiki-production/boot/bootprefix'
 
 import { EventEmitter } from 'events'
 import { parse } from 'url'
@@ -210,8 +212,9 @@ const loadDataFolderTiddlyWiki = (
   vars: {}
 ) => {
   console.time('twboot-' + folder)
-  const tw = nodeRequire(target + '/boot/boot.js').TiddlyWiki(
-    nodeRequire(target + '/boot/bootprefix.js').bootprefix({
+  process.stdout.write(target.toString())
+  const tw = boot.TiddlyWiki(
+    bootPrefix.bootprefix({
       packageInfo: nodeRequire(target + '/package.json'),
     })
   )
